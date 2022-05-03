@@ -14,7 +14,8 @@ class ModelData:ObservableObject {
         accountNames.randomElement() ?? "Unknown"
     }
     
-    @Published var pinnedTransactions = [1:sampleTransactions[0],2:sampleTransactions[1],3:sampleTransactions[2],4:sampleTransactions[3],5:sampleTransactions[4], 6:sampleTransactions[5],7:sampleTransactions[6],8:sampleTransactions[7],9:sampleTransactions[8]]
+    @Published var pinnedTransactions = [1:sampleTransactions[0],2:sampleTransactions[1],3:sampleTransactions[2],4:sampleTransactions[3],5:sampleTransactions[4], 6:sampleTransactions[5],7:sampleTransactions[6],8:sampleTransactions[7],9:sampleTransactions[8],10:sampleTransactions[9],11:sampleTransactions[10]
+    ,12:sampleTransactions[11],13:sampleTransactions[12]]
     
     static var sampleTransactions: [TransactionModel] = [
         TransactionModel(

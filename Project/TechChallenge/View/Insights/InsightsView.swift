@@ -19,7 +19,6 @@ struct InsightsView: View {
                         .font(.headline)
                         .foregroundColor(category.color)
                     Spacer()
-                    
                     Text(HelperFunctions.returnPrice(categoryName: category.rawValue, transactions:modelData.pinnedTransactions))
                         .bold()
                         .secondary()

@@ -17,9 +17,7 @@ struct TransactionView: View {
             HStack {
                 Text(transaction.category.rawValue)
                     .font(.headline)
-                    .foregroundColor(transaction.category.color).onTapGesture {
-                        self.collapsed.toggle()
-                    }
+                    .foregroundColor(transaction.category.color)
                 Spacer()
                 Image(systemName: self.collapsed ? "pin.slash.fill" : "pin.fill")
             }
@@ -50,7 +48,6 @@ struct TransactionView: View {
                 }
             } else{EmptyView()}
         }.onTapGesture {
-            
             if modelData.pinnedTransactions[transaction.id] != nil {
                 modelData.pinnedTransactions.removeValue(forKey: transaction.id)
             }

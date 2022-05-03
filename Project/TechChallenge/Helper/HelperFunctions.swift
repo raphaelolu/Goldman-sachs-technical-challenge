@@ -5,14 +5,13 @@ import SwiftUI
 class HelperFunctions{
     
     static func returnPrice(categoryName:String,transactions:[Int:TransactionModel]) -> String{
-        var priceArray = [Int]()
+        var priceArray = [Double]()
         for item in transactions {
             if item.value.category.rawValue == categoryName{
-                priceArray.append(Int(item.value.amount))
+                priceArray.append(item.value.amount)
             }
         }
-        let priceTotalValue =  priceArray.reduce(0, +)
-        return "$\(priceTotalValue)"
+        return "$" + addSomeOfArray(array: priceArray)
     }
     
     static func calculateTotalAmountSpentInCategory(category:String,transactions:[TransactionModel])-> String{
@@ -41,12 +40,10 @@ class HelperFunctions{
             category.category.rawValue == categoryName
         }
         return filteredCategoryName
-        
     }
     
     private  static func addSomeOfArray(array:[Double])-> String {
         let totalAmountSpoent = array.reduce(0, +)
-        let roundUpAmount = String(format: "%.2f", totalAmountSpoent)
-        return roundUpAmount
+        return String(format: "%.2f", totalAmountSpoent)
     }
 }
