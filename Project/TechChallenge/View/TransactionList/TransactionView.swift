@@ -12,7 +12,6 @@ struct TransactionView: View {
     @EnvironmentObject var modelData:ModelData
     @State private var collapsed: Bool = false
     var body: some View {
-        
         VStack {
             HStack {
                 Text(transaction.category.rawValue)
